@@ -85,4 +85,27 @@ const movies = [
   
   // Add here the script that will be run to actually seed the database (feel free to refer to the previous lesson)
   
-  // ... your code here
+const mongoose = require('mongoose')
+const Movie = require("../models/Movie.model");
+
+// the seeds file is something we use only in development
+// the purpose is just to populate the DB with some data in the beginning so 
+// that we have some data to look at while we're building features
+
+mongoose.connect('mongodb://localhost/lab-express-cinema')
+.then(()=>{
+    console.log("connected to database")
+})
+.catch((err)=>{
+    console.log("error connecting to database");
+})
+
+Movie.create(movies)
+.then((response)=>{
+    console.log(response);
+})
+.catch((err)=>{
+    console.log(err);
+})
+
+  
