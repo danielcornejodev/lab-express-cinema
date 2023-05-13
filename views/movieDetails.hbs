@@ -3,18 +3,17 @@
         <img src={{theMovie.image}} alt=""/>
     </div>
     <div id="details-cnt">
+        <a href="/movies">Go back</a>
         <h1>{{theMovie.title}}</h1>
         <h2>Director: {{theMovie.director}}</h2>
         <h3>Stars</h3>
-        <ul>
-            {{#each theMovie}}
-                <li>{{this.stars}}</li>
-            {{/each}}
-        </ul>
+        {{#each theMovie}}
+            {{this.stars}}
+        {{/each}}
         <p>{{theMovie.desctiption}}</p>
         <div id="showtime-cnt">
             {{#each theMovie}}
-                {{this.showtimes}}|
+                {{this.showtimes}}
             {{/each}}
         </div>
     </div>

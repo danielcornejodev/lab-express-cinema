@@ -60,3 +60,16 @@ main {
   font-size: smaller;
   color: #4EC2FD;
 }
+
+#movie-details-cnt {
+  display: flex;
+}
+
+#image-cnt {
+  padding: 10px;
+}
+
+#image-cnt > img {
+  width: 140px;
+  height: 200px;
+}
