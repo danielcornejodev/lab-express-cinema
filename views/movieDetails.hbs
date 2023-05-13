@@ -1,0 +1,22 @@
+<div id="movie-details-cnt">
+    <div id="image-cnt">
+        <img src={{theMovie.image}} alt=""/>
+    </div>
+    <div id="details-cnt">
+        <h1>{{theMovie.title}}</h1>
+        <h2>Director: {{theMovie.director}}</h2>
+        <h3>Stars</h3>
+        <ul>
+            {{#each theMovie}}
+                <li>{{this.stars}}</li>
+            {{/each}}
+        </ul>
+        <p>{{theMovie.desctiption}}</p>
+        <div id="showtime-cnt">
+            {{#each theMovie}}
+                {{this.showtimes}}|
+            {{/each}}
+        </div>
+    </div>
+
+</div>
