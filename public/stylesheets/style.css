@@ -73,3 +73,7 @@ main {
   width: 140px;
   height: 200px;
 }
+
+#details-cnt > a {
+  color: #4EC2FD;
+}
