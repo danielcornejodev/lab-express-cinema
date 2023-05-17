@@ -21,6 +21,10 @@
                 {{this}}|
             {{/each}}
         </div>
+        <br><br><br>
+        <form action="/movie/delete/{{theMovie._id}}" method="POST">
+            <button>Delete This Movie</button>
+        </form>
     </div>
 
 </div>

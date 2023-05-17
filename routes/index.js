@@ -51,6 +51,13 @@ router.get("/movies/:theID", (req, res)=>{
     });
 });
 
+router.post("/movie/delete/:theID", (req, res)=>{
+    Movie.findByIdAndRemove(req.params.theID)
+    .then(()=>{
+        res.redirect("/movies");
+    });
+});
+
 router.get("/movies/:id/edit", (req, res)=>{
     Movie.findById(req.params.id)
     .then((theMovie)=>{
