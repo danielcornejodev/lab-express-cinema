@@ -36,7 +36,6 @@ router.post("/movies/create", (req, res)=>{
 // on a post request, on the .then, you always redirect, never render
 });
 
-
 router.get("/movies/:theID", (req, res)=>{
     // when you have something with a : in the route
     // that means the route will never go to 
@@ -52,7 +51,26 @@ router.get("/movies/:theID", (req, res)=>{
     });
 });
 
+router.get("/movies/:id/edit", (req, res)=>{
+    Movie.findById(req.params.id)
+    .then((theMovie)=>{
+        res.render("movie-edit", {theMovie})
+    })
+});
 
+router.post("/movies/:theID/update", (req, res)=>{
+    Movie.findByIdAndUpdate(req.params.theID,{
+        title: req.body.title,
+        director: req.body.director,
+        stars: req.body.stars,
+        image: req.body.img,
+        description: req.body.description,
+        showtimes: req.body.showtimes
+    }).then(()=>{
+        res.redirect("/movies/"+req.params.theID)
+    })
+
+})
 
 
 module.exports = router;

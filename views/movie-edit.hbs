@@ -1,0 +1,43 @@
+<h1>Edit This Movie</h1>
+
+<form action="/movies/{{theMovie._id}}/update" method="POST">
+
+<label>Title
+    <input type="text" name="title" value="{{theMovie.title}}">
+</label>
+
+<br><br>
+
+<label>Director
+    <input type="text" name="director" value="{{theMovie.director}}">
+</label>
+
+<br><br>
+
+<label>Stars
+    <input type="text" name="stars" value="{{theMovie.stars}}">
+</label>
+
+<br><br>
+
+<label>Image URL
+    <input type="text" name="img" value="{{theMovie.image}}">
+</label>
+
+<br><br>
+
+<label>Description
+    <input type="text" name="description" value="{{theMovie.description}}">
+</label>
+
+<br><br>
+
+<label>Showtimes
+    <input type="text" name="showtimes" value="{{theMovie.showtimes}}">
+</label>
+
+
+<button type="submit">Save</button>
+
+
+</form>
