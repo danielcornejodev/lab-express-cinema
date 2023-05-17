@@ -7,13 +7,15 @@
         <h1>{{theMovie.title}}</h1>
         <h2>Director: {{theMovie.director}}</h2>
         <h3>Stars</h3>
-        {{#each theMovie}}
-            {{this.stars}}
+        {{#each theMovie.stars}}
+            <li>
+                {{this}}
+            </li>
         {{/each}}
-        <p>{{theMovie.desctiption}}</p>
+        <p>{{theMovie.description}}</p>
         <div id="showtime-cnt">
-            {{#each theMovie}}
-                {{this.showtimes}}
+            {{#each theMovie.showtimes}}
+                {{this}}|
             {{/each}}
         </div>
     </div>
